@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Event:
+  = @schedule.event_id
+%p
+  %b Start time:
+  = @schedule.start_time
+%p
+  %b End time:
+  = @schedule.end_time
+
+= link_to 'Edit', edit_schedule_path(@schedule)
+\|
+= link_to 'Back', schedules_path

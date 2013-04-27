@@ -1,0 +1,23 @@
+%h1 Listing schedules
+
+%table
+  %tr
+    %th Event
+    %th Start time
+    %th End time
+    %th
+    %th
+    %th
+
+  - @schedules.each do |schedule|
+    %tr
+      %td= schedule.event_id
+      %td= schedule.start_time
+      %td= schedule.end_time
+      %td= link_to 'Show', schedule
+      %td= link_to 'Edit', edit_schedule_path(schedule)
+      %td= link_to 'Destroy', schedule, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Schedule', new_schedule_path

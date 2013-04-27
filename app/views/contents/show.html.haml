@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Schedule:
+  = @content.schedule_id
+%p
+  %b Title:
+  = @content.title
+%p
+  %b Description:
+  = @content.description
+%p
+  %b Capacity:
+  = @content.capacity
+%p
+  %b Speaker:
+  = @content.speaker_id
+%p
+  %b Room name:
+  = @content.room_name
+
+= link_to 'Edit', edit_content_path(@content)
+\|
+= link_to 'Back', contents_path

@@ -1,0 +1,13 @@
+= simple_form_for(@content) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :schedule_id
+    = f.input :title
+    = f.input :description
+    = f.input :capacity
+    = f.input :speaker_id
+    = f.input :room_name
+
+  .form-actions
+    = f.button :submit

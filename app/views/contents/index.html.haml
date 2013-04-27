@@ -1,0 +1,29 @@
+%h1 Listing contents
+
+%table
+  %tr
+    %th Schedule
+    %th Title
+    %th Description
+    %th Capacity
+    %th Speaker
+    %th Room name
+    %th
+    %th
+    %th
+
+  - @contents.each do |content|
+    %tr
+      %td= content.schedule_id
+      %td= content.title
+      %td= content.description
+      %td= content.capacity
+      %td= content.speaker_id
+      %td= content.room_name
+      %td= link_to 'Show', content
+      %td= link_to 'Edit', edit_content_path(content)
+      %td= link_to 'Destroy', content, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Content', new_content_path
