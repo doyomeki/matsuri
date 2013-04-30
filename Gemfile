@@ -26,7 +26,7 @@ group :test do
 end
 
 group :development do
-  gem 'sqlite3'
+  # gem 'sqlite3'
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "html2haml", ">= 1.0.1"
