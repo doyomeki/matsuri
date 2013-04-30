@@ -53,9 +53,9 @@ end
 group :test, :development do
   gem "rspec-rails", ">= 2.12.2"
   gem "factory_girl_rails", ">= 4.2.0"
+  gem "rails-erd"
 end
 
 group :production do
-  gem "puma", ">= 1.6.3"
   gem "mysql2"
 end

@@ -15,7 +15,9 @@
           %td= link_to user.name, user
           %td= user.email
           %td= user.created_at.to_date
-          %td= user.roles.first.name.titleize unless user.roles.first.nil?
+          %td= user.role.titleize unless user.role.nil?
+          /%td= user.roles.first.name.titleize unless user.roles.first.nil?
+          /%td= user.role
           %td
             %a.btn.btn-mini{"data-toggle" => "modal", :href => "#role-options-#{user.id}", :type => "button"} Change role
             = render user
