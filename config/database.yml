@@ -19,13 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: doyomeki
-  username: mbIJVPwX
-  password: uExYlekq
-  host: 10.1.72.53
-  port: 50079
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
