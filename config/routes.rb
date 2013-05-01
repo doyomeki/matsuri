@@ -1,25 +1,16 @@
 Myapp::Application.routes.draw do
-  get "home/index"
-
-  resources :speakers
-
+  devise_for :users
 
   resources :contents
-
-
-  resources :event_participations
-
-
-  resources :schedules
-
-
   resources :events
-
-
-  authenticated :user do
-    root :to => 'home#index'
-  end
-  root :to => "home#index"
-  devise_for :users
+  resources :event_participations
+  resources :schedules
+  resources :speakers
   resources :users
+
+  root :to => "home#index"
+
+#  authenticated :user do
+#    root :to => 'home#index'
+#  end
 end
