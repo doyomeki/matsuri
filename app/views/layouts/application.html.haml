@@ -19,16 +19,22 @@
     %link(href="favicon.ico" rel="shortcut icon")
 
   %body{:class => "#{controller_name} #{action_name}"}
-    .navbar.navbar-fixed-top
-      %nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
+    .header
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container.navigation
+            = render 'layouts/navigation'
+          .container.menu
+            = render 'layouts/main_menu'
+
+    .container
+      .content
+        .row
+          .span12
+            = render 'layouts/messages'
+            = yield
+
+    %footer
 
     /Javascripts
     / Placed at the end of the document so the pages load faster
