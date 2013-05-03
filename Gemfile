@@ -17,6 +17,7 @@ gem "devise", ">= 2.2.3" # 認証
 gem "cancan", ">= 1.6.9" # 権限管理
 gem "rolify", ">= 3.2.0" # 権限管理
 gem "simple_form", ">= 2.1.0"
+gem "thin"
 # Omniauth使う時にIDやSecretKeyを隠蔽するのに便利
 gem "figaro", ">= 0.6.3"
 
