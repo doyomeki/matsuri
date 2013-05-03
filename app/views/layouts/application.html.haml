@@ -1,29 +1,35 @@
-!!!
+/!!! 5
 %html
   %head
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "TIS MATSURI"
-      %meta{:content => content_for?(:description) ? yield(:description) : "Myapp", :name => "description"}
-        = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
-        = csrf_meta_tags
-        = yield(:head)
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "TIS MATSURI"
+
+    %meta{:content => content_for?(:description) ? yield(:description) : "TIS MATSURI", :name => "description"}
+      = stylesheet_link_tag "application", :media => "all"
+      = javascript_include_tag "application"
+      = csrf_meta_tags
+      = yield(:head)
+
+    %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
+    %link(href="favicon.ico" rel="shortcut icon")
+
   %body{:class => "#{controller_name} #{action_name}"}
-    %p.notice
-      = notice
-    %p.alert
-      = alert
     .navbar.navbar-fixed-top
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
-    #main{:role => "main"}
-      .container
         .content
           .row
             .span12
               = render 'layouts/messages'
               = yield
           %footer
-      / ! end of .container
-    / ! end of #main
+
+    /Javascripts
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"

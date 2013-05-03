@@ -10,6 +10,9 @@ gem 'jquery-rails'
 gem "haml-rails", ">= 0.4"
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "twitter-bootstrap-rails"
+gem "libv8"
+gem "therubyracer"
+gem "less-rails"
 gem "devise", ">= 2.2.3" # 認証
 gem "cancan", ">= 1.6.9" # 権限管理
 gem "rolify", ">= 3.2.0" # 権限管理
@@ -27,7 +30,7 @@ group :test do
 end
 
 group :development do
-  # gem 'sqlite3'
+  gem 'sqlite3'
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "html2haml", ">= 1.0.1"
