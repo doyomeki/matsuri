@@ -6,7 +6,7 @@ class Ability
     case user.role
     when "admin"
       can :manage, :all
-    when "user" #ここで参加者のユーザ権限設定
+    when "member" #ここで参加者のユーザ権限設定
       can :read, :all
     end
   end
