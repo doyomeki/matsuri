@@ -1,8 +1,9 @@
-= simple_form_for(@speaker) do |f|
+= simple_form_for(@speaker, :html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
+    = f.file_field :photo
     = f.input :description
 
   .form-actions

@@ -1,4 +1,6 @@
 class SpeakersController < ApplicationController
+  before_filter :authenticate_user!,:only => [:new,:create,:update,:destroy]
+
   # GET /speakers
   # GET /speakers.json
   def index
@@ -41,6 +43,10 @@ class SpeakersController < ApplicationController
   # POST /speakers.json
   def create
     @speaker = Speaker.new(params[:speaker])
+    if image = params[:speaker][:photo]
+      @speaker.photo = image.read
+      @speaker.photo_type = image.content_type
+    end
 
     respond_to do |format|
       if @speaker.save
@@ -57,6 +63,10 @@ class SpeakersController < ApplicationController
   # PUT /speakers/1.json
   def update
     @speaker = Speaker.find(params[:id])
+    if image = params[:speaker][:photo]
+      @speaker.photo = image.read
+      @speaker.photo_type = image.content_type
+    end
 
     respond_to do |format|
       if @speaker.update_attributes(params[:speaker])
@@ -79,5 +89,10 @@ class SpeakersController < ApplicationController
       format.html { redirect_to speakers_url }
       format.json { head :no_content }
     end
+  end
+
+  def photo
+    @speaker = Speaker.find(params[:id])
+    send_data @speaker.photo, :type => @speaker.photo_type
   end
 end

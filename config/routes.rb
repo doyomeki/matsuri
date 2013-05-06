@@ -13,4 +13,11 @@ Myapp::Application.routes.draw do
 #  authenticated :user do
 #    root :to => 'home#index'
 #  end
+
+  resources :speakers do
+    member do
+      get :photo
+    end
+  end
+
 end
