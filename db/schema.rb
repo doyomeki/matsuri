@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428070034) do
+ActiveRecord::Schema.define(:version => 20130427151452) do
 
   create_table "content_participations", :force => true do |t|
     t.string   "content_id"
@@ -89,8 +89,6 @@ ActiveRecord::Schema.define(:version => 20130428070034) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
-    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
