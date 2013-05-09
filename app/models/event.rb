@@ -1,11 +1,14 @@
 class Event < ActiveRecord::Base
   attr_accessible :capacity, :description, :end_datetime, :place, :start_datetime, :title
 
-  scope :top_data, where(:flag => true)
-  scope :limit_1, limit(1)
+  has_many :schedules, foreign_key: "schedule_id"
 
   def self.top_data
     events = self.where(flag: true)
     events.count == 1 ? events : events.first
+  end
+
+  def time_schedules
+    Schedule.find_all_by_event_id(self.id)
   end
 end
