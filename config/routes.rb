@@ -1,4 +1,6 @@
 Myapp::Application.routes.draw do
+  get "content_participations/edit"
+
   devise_for :users
 
   resources :contents

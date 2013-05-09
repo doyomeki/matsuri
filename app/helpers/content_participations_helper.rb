@@ -1,0 +1,2 @@
+module ContentParticipationsHelper
+end
