@@ -2,6 +2,8 @@ ja:
   helpers:
     actions: "Actions"
     links:
+      content:
+        save: "登録する"
       back: "戻る"
       cancel: "キャンセル"
       confirm: "よろしいですか？"
