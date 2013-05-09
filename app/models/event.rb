@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :capacity, :description, :end_datetime, :place, :start_datetime, :title
 
-  has_many :schedules, foreign_key: "schedule_id"
+  has_many :schedules
 
   def self.top_data
     events = self.where(flag: true)
