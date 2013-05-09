@@ -17,6 +17,7 @@
 
 # minimal Rails specific artifacts
 db/*.sqlite3
+db/schema.rb
 /log/*
 /tmp/*
 
@@ -74,3 +75,5 @@ pickle-email-*.html
 
 # Ignore application configuration
 #/config/application.yml
+
+/.rbenv-gemsets
