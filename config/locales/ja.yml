@@ -1,0 +1,14 @@
+ja:
+  helpers:
+    actions: "Actions"
+    links:
+      back: "戻る"
+      cancel: "キャンセル"
+      confirm: "よろしいですか？"
+      destroy: "削除"
+      new: "新規"
+    titles:
+      edit: "編集"
+      save: "登録"
+      new: "新規作成"
+      delete: "削除"
