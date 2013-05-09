@@ -21,9 +21,4 @@
       %td= event.start_datetime
       %td= event.end_datetime
       %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
 %br
-
-= link_to 'New Event', new_event_path
