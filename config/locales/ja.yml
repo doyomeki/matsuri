@@ -1,4 +1,12 @@
 ja:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+  time:
+    formats:
+      default: "%H:%M"
   helpers:
     actions: "Actions"
     links:

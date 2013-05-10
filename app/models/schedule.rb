@@ -6,7 +6,8 @@ class Schedule < ActiveRecord::Base
 
   default_scope order("start_time")
 
+  # 各タイムテーブルに対するコンテンツ
   def content_menu
-    Content.find_all_by_schedule_id(self.id)
+    Content.where(schedule_id: self.id)
   end
 end
