@@ -2,5 +2,7 @@
   - @schedules.each do |schedule|
     %tr
       %td= l schedule.start_time
+      - @contents = schedule.content_menu
+      %td= render :partial => @contents, :spacer_template => "contents/separator"
     %tr
       %td= l schedule.end_time
