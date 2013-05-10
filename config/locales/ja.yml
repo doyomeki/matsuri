@@ -7,6 +7,8 @@ ja:
   time:
     formats:
       default: "%H:%M"
+      event_day: "%Y年%m月%d日"
+      event_time: "%H:%M"
   helpers:
     actions: "Actions"
     links:
@@ -22,3 +24,7 @@ ja:
       save: "登録"
       new: "新規作成"
       delete: "削除"
+  event:
+    open: "開催"
+    capacity: "定員"
+    person: "人"

@@ -1,8 +1,9 @@
-%table
-  - @schedules.each do |schedule|
-    %tr
-      %td= l schedule.start_time
-      - @contents = schedule.content_menu
-      %td= render :partial => @contents, :spacer_template => "contents/separator"
-    %tr
-      %td= l schedule.end_time
+- @schedules.each do |schedule|
+  %td.time_table
+    = l schedule.start_time
+    %br
+    = "〜"
+    %br
+    = l schedule.end_time
+  - @contents = schedule.content_menu
+  %td= render :partial => @contents, :spacer_template => "contents/separator"

@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
@@ -15,6 +17,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @schedules = @event.time_schedules
+    @wdays = ["日", "月", "火", "水", "木", "金", "土"]
 
     respond_to do |format|
       format.html # show.html.erb

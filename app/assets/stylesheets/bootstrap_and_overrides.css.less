@@ -30,23 +30,87 @@
 // Example:
 // @linkColor: #ff0000;
 
+// TIS MATSURI
 .brand {
   background: url(matsuri_logo.png) no-repeat left center;
   width: 600px;
   height: 90px;
 }
 
+// Sign up / Sign in
 .pull-right {
   padding-top: 60px;
 }
 
-.menu {
-  background-color: #eee;
-  li a:hover {
-    background-color: transparent;
-  }
+body {
+  padding-top: 140px;
+  background-image: url("/assets/ougi.jpg")
 }
 
-body {
-  padding-top: 170px;
+.navbar-inner {
+  background-image: linear-gradient(to bottom, #ffebcd, #ffd700);
+}
+
+.content {
+  background-color: rgba(255,235,205,0.9);
+  padding: 20px;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  .event {
+    h1 {
+      text-align: center;
+    }
+    h3 {
+      padding-left: 200px;
+    }
+    p {
+      padding-left: 200px;
+      text-align: left;
+    }
+    .save_button {
+      text-align: center;
+    }
+    .time_table {
+      text-align: center;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+      img {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 40px;
+      }
+    }
+    table.time_table {
+      .time_table {
+        text-align: center;
+        padding: 10px;
+      }
+      .img-rounded {
+        width: 200px;
+      }
+      .session {
+        td.img {
+          width: 200px;
+          padding: 10px;
+        }
+        td.speaker {
+          vertical-align: top;
+          width: 220px;
+          padding: 20px 20px 20px 10px;
+        }
+        td.title {
+          padding-left: 10px;
+          font-weight: bold;
+        }
+        td.description {
+          padding: 0px 0px 10px 10px;
+        }
+      }
+    }
+  }
 }

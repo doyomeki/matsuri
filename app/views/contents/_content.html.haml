@@ -1,4 +1,15 @@
-= content.room_name
-= content.room_capacity
-= content.title
-= content.description
+%table.session
+  %tr
+    %td.img
+      %img.img-rounded{src: "/assets/hatena.jpg"}
+    %td.speaker
+      .label.label-info
+        .room_name
+          = content.room_name
+      = t("event.capacity")
+      = content.room_capacity
+      = t("event.person")
+  %tr
+    %td.title{colspan: 2}= content.title
+  %tr
+    %td.description{colspan: 2}= content.description

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/fnando/i18n-js.git
+  revision: eeec14066b50f72876aa789c9b1f226172452798
+  specs:
+    i18n-js (2.1.2)
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -311,6 +318,7 @@ DEPENDENCIES
   guard-zeus
   haml-rails (>= 0.4)
   html2haml (>= 1.0.1)
+  i18n-js!
   jquery-rails
   launchy (>= 2.2.0)
   less-rails

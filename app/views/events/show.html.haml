@@ -1,24 +1,28 @@
-%p#notice= notice
+.event
+  %h1= @event.title
+  %h3
+    = t("event.open") + " : "
+    = l @event.start_datetime, format: :event_day
+    = "(" + @wdays[@event.start_datetime.wday] + ") "
+    = l @event.start_datetime, format: :event_time
+    = "〜"
+    = l @event.end_datetime, format: :event_time
+  %h3
+    = @event.place
+  %p
+    = t("event.capacity") + " : "
+    = @event.capacity
+    = t("event.person")
+  %p
+    = @event.description
 
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Capacity:
-  = @event.capacity
-%p
-  %b Place:
-  = @event.place
-%p
-  %b Start datetime:
-  = @event.start_datetime
-%p
-  %b End datetime:
-  = @event.end_datetime
+  .save_button
+    = button_to '登録する', content_participations_edit_path, class: "btn btn-large btn-success"
+  %br
 
-= link_to '登録する', content_participations_edit_path
-
-= render :partial => @schedules, :spacer_template => "schedules/separator"
+  .time_table
+    %img{src: "/assets/chochin.png"}
+    Time Table
+    %img{src: "/assets/chochin.png"}
+  %table.time_table
+    %tr= render :partial => @schedules, :spacer_template => "schedules/separator"

@@ -62,3 +62,5 @@ end
 group :production do
   gem "mysql2"
 end
+
+gem 'i18n-js', :github => 'fnando/i18n-js'
