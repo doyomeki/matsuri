@@ -4,10 +4,18 @@ class Content < ActiveRecord::Base
   belongs_to :schedule, foreign_key: "schedule_id"
 
   def room_name
-    Room.find(self.id).name
+    Room.where(id: self.room_id).first.name
   end
 
   def room_capacity
-    Room.find(self.id).capacity
+    Room.where(id: self.room_id).first.capacity
+  end
+
+  def speaker_name
+    Speaker.where(id: self.speaker_id).first.name
+  end
+
+  def speaker_description
+    Speaker.where(id: self.speaker_id).first.description
   end
 end

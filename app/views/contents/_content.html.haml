@@ -9,6 +9,8 @@
       = t("event.capacity")
       = content.room_capacity
       = t("event.person")
+      .speaker_introduction
+        = render partial: "speakers/speaker", locals: {content: content}
   %tr
     %td.title{colspan: 2}= content.title
   %tr

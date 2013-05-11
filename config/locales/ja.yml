@@ -27,4 +27,7 @@ ja:
   event:
     open: "開催"
     capacity: "定員"
-    person: "人"
+    person: "名"
+  speaker:
+    introduction: "登壇者ご紹介"
+    mr: "さん"
