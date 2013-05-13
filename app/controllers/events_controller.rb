@@ -24,4 +24,9 @@ class EventsController < ApplicationController
       format.json { render json: @event }
     end
   end
+
+  # GET /events/1/edit
+  def edit
+    #@event = Event.find(params[:id])
+  end
 end

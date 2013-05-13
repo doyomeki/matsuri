@@ -1,10 +1,8 @@
 Myapp::Application.routes.draw do
-  get "content_participations/edit"
-
   devise_for :users
 
   resources :contents
-  resources :events
+  resources :events, only: [:show, :edit]
   resources :event_participations
   resources :schedules
   resources :speakers
@@ -21,5 +19,4 @@ Myapp::Application.routes.draw do
       get :photo
     end
   end
-
 end
