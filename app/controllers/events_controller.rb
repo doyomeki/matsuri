@@ -27,6 +27,12 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    #@event = Event.find(params[:id])
+    @event = Event.find(params[:id])
+    @schedules = @event.time_schedules
+
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.json { render json: @event }
+    end
   end
 end

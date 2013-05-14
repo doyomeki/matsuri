@@ -1,1 +1,7 @@
-%h1 Editing event
+.event
+  .time_table
+    %img{src: "/assets/chochin.png"}
+    Time Table
+    %img{src: "/assets/chochin.png"}
+  %table.time_table
+    %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
