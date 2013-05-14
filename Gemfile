@@ -18,6 +18,7 @@ gem "simple_form", ">= 2.1.0"
 gem "thin"
 # Omniauth使う時にIDやSecretKeyを隠蔽するのに便利
 gem "figaro", ">= 0.6.3"
+gem "seed-fu"
 
 group :test do
   gem "email_spec", ">= 1.4.0"
