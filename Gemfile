@@ -19,6 +19,8 @@ gem "thin"
 # Omniauth使う時にIDやSecretKeyを隠蔽するのに便利
 gem "figaro", ">= 0.6.3"
 gem "seed-fu"
+gem "rails_admin"
+gem "devise-i18n"
 
 group :test do
   gem "email_spec", ">= 1.4.0"
