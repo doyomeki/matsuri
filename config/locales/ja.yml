@@ -31,3 +31,5 @@ ja:
   speaker:
     introduction: "登壇者ご紹介"
     mr: "さん"
+  time_table:
+    select_content_message: "参加予定のセッションを選択してください。"
