@@ -10,10 +10,11 @@ ja:
       event_day: "%Y年%m月%d日"
       event_time: "%H:%M"
   helpers:
-    actions: "Actions"
+    actions:
     links:
       content:
         save: "登録する"
+        commit: "決定する"
       back: "戻る"
       cancel: "キャンセル"
       confirm: "よろしいですか？"

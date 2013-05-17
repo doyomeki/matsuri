@@ -6,3 +6,5 @@
   = t "time_table.select_content_message"
   %table.time_table
     %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
+  .save_button
+    = link_to t("commit"), root_path, class: "btn btn-large btn-warning"
