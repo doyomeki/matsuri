@@ -25,8 +25,7 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /events/1/edit
-  def edit
+  def entry
     @event = Event.find(params[:id])
     @schedules = @event.time_schedules
 
