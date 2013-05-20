@@ -5,7 +5,7 @@
       = link_to 'Edit account', edit_user_registration_path
     - if current_user.admin?
       %li
-        = link_to 'Admin', users_path
+        = link_to 'Admin', rails_admin_path
   - else
     %li
       = link_to 'Sign up', new_user_registration_path
