@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @schedules = @event.time_schedules
+    @select_entry = false
     @wdays = ["日", "月", "火", "水", "木", "金", "土"]
 
     respond_to do |format|
@@ -28,10 +29,18 @@ class EventsController < ApplicationController
   def entry
     @event = Event.find(params[:id])
     @schedules = @event.time_schedules
+    @select_entry = true
 
     respond_to do |format|
-      format.html # edit.html.erb
+      format.html # entry.html.erb
       format.json { render json: @event }
+    end
+  end
+
+  def update
+    respond_to do |format|
+      format.html { redirect_to entry_event_path, notice: 'Speaker was successfully updated.' }
+      format.json { head :no_content }
     end
   end
 end

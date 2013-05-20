@@ -4,7 +4,8 @@
     Time Table
     %img{src: "/assets/chochin.png"}
   = t "time_table.select_content_message"
-  %table.time_table
-    %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
-  .save_button
-    = link_to t("commit"), root_path, class: "btn btn-large btn-warning"
+  = form_tag({action: "update", id: @event.id}, {method: :put}) do
+    %table.time_table
+      %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
+    .save_button
+      = submit_tag I18n.t("commit"), class: "btn btn-large btn-warning"
