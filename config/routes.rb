@@ -4,7 +4,7 @@ Myapp::Application.routes.draw do
   devise_for :users
 
   resources :contents
-  resources :events, only: [:show] do
+  resources :events, only: [:show, :update] do
     get 'entry' => 'events#entry', on: :member
   end
   resources :event_participations

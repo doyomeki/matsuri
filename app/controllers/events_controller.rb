@@ -36,4 +36,11 @@ class EventsController < ApplicationController
       format.json { render json: @event }
     end
   end
+
+  def update
+    respond_to do |format|
+      format.html { redirect_to entry_event_path, notice: 'Speaker was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
 end
