@@ -1,5 +1,5 @@
 %td
-  = radio_button_tag content.schedule_id, content.id, false
+  = radio_button_tag(content.schedule_id, content.id, false) if @select_entry
 %td
   %table.session
     %tr
