@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:name]
 
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role
   attr_accessible :role, :as => :admin
-  attr_accessor :role
 
   before_save :default_values
   def default_values
