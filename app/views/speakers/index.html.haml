@@ -3,6 +3,8 @@
 %table
   %tr
     %th Name
+    %th Photo
+    %th Division
     %th Description
     %th
     %th
@@ -11,6 +13,8 @@
   - @speakers.each do |speaker|
     %tr
       %td= speaker.name
+      %td= image_tag photo_speaker_path(speaker)
+      %td= speaker.division
       %td= speaker.description
       %td= link_to 'Show', speaker
       %td= link_to 'Edit', edit_speaker_path(speaker)
