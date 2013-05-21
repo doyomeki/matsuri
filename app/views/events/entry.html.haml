@@ -7,5 +7,10 @@
   = form_tag({action: "update", id: @event.id}, {method: :put}) do
     %table.time_table
       %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
-    .save_button
-      = submit_tag I18n.t("commit"), class: "btn btn-large btn-warning"
+
+    - if user_signed_in?
+      .save_button
+        = submit_tag I18n.t("actions.commit"), class: "btn btn-large btn-warning"
+    - else
+      .login_button
+        = link_to "login", new_user_session_path, class: "btn"

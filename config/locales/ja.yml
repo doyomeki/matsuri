@@ -34,3 +34,5 @@ ja:
     mr: "さん"
   time_table:
     select_content_message: "参加予定のセッションを選択してください。"
+  actions:
+    commit: "登録する"

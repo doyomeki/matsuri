@@ -9,6 +9,6 @@ class Event < ActiveRecord::Base
   end
 
   def time_schedules
-    Schedule.find_all_by_event_id(self.id)
+    Schedule.where(event_id: self.id)
   end
 end
