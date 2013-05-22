@@ -52,14 +52,25 @@ class EventsController < ApplicationController
     end
 
     # 参加コンテンツを登録
-    event_participation_id = user_entry?(params[:id], current_user.id).id
-
-    # contentsテーブルの複数あるschedule_idを持つcontentレコードすべてを調べ、
-    # content_participationsテーブルすべてを調べる
-
+    event_participation_id = user_entry?(params[:id], current_user.id).first.id
     schedules = Schedule.where(event_id: params[:id])
     schedules.each do |schedule|
+      # ラジオボタンで選択されていた場合
       if params[schedule.id.to_s]
+        contents = Content.where(schedule_id: schedule.id)
+        contents.each do |content|
+          entry_content = user_entry_content?(event_participation_id, content.id)
+          if entry_content.blank?
+            if content.id = params[schedule.id.to_s]
+              content_participation = ContentParticipation.new(event_participation_id: event_participation_id, content_id: content.id)
+              content_participation.save!
+            end
+          else
+            entry_content.each do |content|
+              content.destroy
+            end
+          end
+        end
       else
         raise "選択してません。"
       end
@@ -74,5 +85,9 @@ class EventsController < ApplicationController
 
   def user_entry?(event_id, user_id)
     EventParticipation.where(event_id: event_id, user_id: user_id)
+  end
+
+  def user_entry_content?(event_participation_id, content_id)
+    ContentParticipation.where(event_participation_id: event_participation_id, content_id: content_id)
   end
 end
