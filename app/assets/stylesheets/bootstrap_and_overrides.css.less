@@ -30,29 +30,35 @@
 // Example:
 // @linkColor: #ff0000;
 
-// TIS MATSURI
-.brand {
-  background: url(matsuri_logo.png) no-repeat left center;
-  width: 600px;
-  height: 90px;
-}
-
-// Sign up / Sign in
-.pull-right {
-  padding-top: 60px;
-}
-
 body {
-  padding-top: 140px;
-  //background-image: url("/assets/ougi.jpg")
+  margin: 0;
+  padding: 0;
+  img.matsuri_background {
+    top: 0;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+  }
+  img.matsuri_logo {
+    padding-top: 50px;
+    padding-left: 40px;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .navbar-inner {
-  background-image: linear-gradient(to bottom, #ffebcd, #ffd700);
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: none;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  border-width: 0px;
 }
 
 .content {
-  background-color: rgba(255,235,205,0.9);
+  margin-top: 270px;
+  background-color: rgba(0, 20, 20, 0.6);
   padding: 20px;
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;

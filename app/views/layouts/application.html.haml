@@ -19,6 +19,8 @@
     %link(href="favicon.ico" rel="shortcut icon")
 
   %body{:class => "#{controller_name} #{action_name}"}
+    = image_tag "/assets/tis_matsuri.jpg", class: "matsuri_background"
+    = image_tag "/assets/tis_matsuri_logo.gif", class: "matsuri_logo"
     .header
       .navbar.navbar-fixed-top
         .navbar-inner
