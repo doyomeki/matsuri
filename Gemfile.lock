@@ -84,6 +84,9 @@ GEM
       warden (~> 1.2.1)
     devise-i18n (0.8.3)
     diff-lcs (1.2.4)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
+      rack
     email_spec (1.4.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -338,6 +341,7 @@ DEPENDENCIES
   debugger
   devise (>= 2.2.3)
   devise-i18n
+  dragonfly
   email_spec (>= 1.4.0)
   factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
@@ -361,6 +365,7 @@ DEPENDENCIES
   pry-rails
   pry-remote
   quiet_assets (>= 1.0.2)
+  rack-cache
   rails (= 3.2.13)
   rails-erd
   rails_admin

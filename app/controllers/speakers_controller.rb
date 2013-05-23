@@ -43,10 +43,6 @@ class SpeakersController < ApplicationController
   # POST /speakers.json
   def create
     @speaker = Speaker.new(params[:speaker])
-    if image = params[:speaker][:photo]
-      @speaker.photo = image.read
-      @speaker.photo_type = image.content_type
-    end
 
     respond_to do |format|
       if @speaker.save
@@ -63,10 +59,6 @@ class SpeakersController < ApplicationController
   # PUT /speakers/1.json
   def update
     @speaker = Speaker.find(params[:id])
-    if image = params[:speaker][:photo]
-      @speaker.photo = image.read
-      @speaker.photo_type = image.content_type
-    end
 
     respond_to do |format|
       if @speaker.update_attributes(params[:speaker])

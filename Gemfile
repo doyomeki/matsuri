@@ -21,6 +21,8 @@ gem "figaro", ">= 0.6.3"
 gem "seed-fu"
 gem "rails_admin"
 gem "devise-i18n"
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly'
 
 group :test do
   gem "email_spec", ">= 1.4.0"

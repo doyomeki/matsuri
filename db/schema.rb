@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521134149) do
+ActiveRecord::Schema.define(:version => 20130523161919) do
 
   create_table "content_participations", :force => true do |t|
     t.string   "content_id"
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(:version => 20130521134149) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.binary   "photo"
-    t.string   "photo_type"
+    t.binary   "photo_name"
+    t.string   "photo_uid"
     t.string   "division"
   end
 
