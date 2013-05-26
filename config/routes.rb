@@ -4,8 +4,9 @@ Myapp::Application.routes.draw do
   devise_for :users
 
   resources :contents
-  resources :events, only: [:show, :update] do
+  resources :events, only: [:index, :show, :update, ] do
     get 'entry' => 'events#entry', on: :member
+    post 'keyword_authentication', on: :member
   end
   resources :event_participations
   resources :schedules

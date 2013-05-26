@@ -4,11 +4,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-
+    @id = params[:id]
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
+      format.html # index.html.haml
+      format.json { render json: @event }
     end
   end
 
@@ -21,7 +20,7 @@ class EventsController < ApplicationController
     @wdays = ["日", "月", "火", "水", "木", "金", "土"]
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @event }
     end
   end
@@ -32,7 +31,7 @@ class EventsController < ApplicationController
     @select_entry = true
 
     respond_to do |format|
-      format.html # entry.html.erb
+      format.html # entry.html.haml
       format.json { render json: @event }
     end
   end
@@ -78,6 +77,15 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to entry_event_path, notice: 'Time Table was successfully updated.' }
       format.json { head :no_content }
+    end
+  end
+
+  def keyword_authentication
+    @event = Event.find(params[:id])
+    if @event.keyword == params[:event][:keyword]
+      redirect_to :controller => "events", :action => "show", :id => @event.id
+    else
+      redirect_to :action => "index", :id => @event.id, :flash => {:error => "合言葉が違います。"}
     end
   end
 

@@ -1,24 +1,6 @@
-%h1 Listing events
+= flash[:error]
+%h1 合言葉認証
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Capacity
-    %th Place
-    %th Start datetime
-    %th End datetime
-    %th
-    %th
-    %th
-
-  - @events.each do |event|
-    %tr
-      %td= event.title
-      %td= event.description
-      %td= event.capacity
-      %td= event.place
-      %td= event.start_datetime
-      %td= event.end_datetime
-      %td= link_to 'Show', event
-%br
+= form_tag :controller => "events", :action => "keyword_authentication", :id => @id do
+  = text_field :event, :keyword
+  = submit_tag "認証"
