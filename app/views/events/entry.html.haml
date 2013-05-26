@@ -1,16 +1,18 @@
 .event
-  .time_table
-    %img{src: "/assets/chochin.png"}
-    Time Table
-    %img{src: "/assets/chochin.png"}
-  = t "time_table.select_content_message"
+  %h1= @event.title
+  .select_message= t "messages.select_content"
   = form_tag({action: "update", id: @event.id}, {method: :put}) do
     %table.time_table
-      %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
+      %tr.time_table= render :partial => @schedules, :spacer_template => "schedules/separator"
+    %br
 
     - if user_signed_in?
       .save_button
         = submit_tag I18n.t("actions.commit"), class: "btn btn-large btn-warning"
     - else
-      .login_button
-        = link_to "login", new_user_session_path, class: "btn"
+      .save_button
+        = submit_tag I18n.t("actions.commit"), class: "btn btn-large btn-warning disabled", disabled: true
+        %br
+        = t("messages.have_to_login")
+        = link_to "Sing in", new_user_session_path
+        = t("messages.have_to_login2")

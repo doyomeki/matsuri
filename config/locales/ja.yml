@@ -33,6 +33,12 @@ ja:
     introduction: "登壇者ご紹介"
     mr: "さん"
   time_table:
-    select_content_message: "参加予定のセッションを選択してください。"
+    time: "時間"
+    session: "セッション"
+  messages:
+    select_content: "参加予定のセッションを選択してください。"
+    have_to_login: "※参加セッションを選択するには"
+    have_to_login2: "してください。"
   actions:
+    get_in: "参加する!!"
     commit: "登録する"

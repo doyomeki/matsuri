@@ -31,6 +31,7 @@
 // @linkColor: #ff0000;
 
 body {
+  color: #ffffff;
   margin: 0;
   padding: 0;
   img.matsuri_background {
@@ -40,35 +41,64 @@ body {
     z-index: -2;
   }
   img.matsuri_logo {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-left: 40px;
     position: absolute;
     z-index: -1;
   }
+  .navbar.navbar-inner {
+    background-image: none;
+    background-color: transparent;
+    border: 0;
+    .pull-right {
+      padding-right: 20px;
+    }
+    ul {
+      display: inline-block;
+      _display: inline;
+      i {
+        padding-top: 12px;
+        vertical-align: middle;
+      }
+      li.sign {
+        text-decoration: underline;
+      }
+    }
+  }
+  .navbar {
+    .nav > li > a:hover, .nav > li > a:focus {
+      color: #ffffff;
+    }
+  }
 }
 
-.navbar-inner {
-  background-color: rgba(0, 0, 0, 0.6);
-  background-image: none;
-}
-
-.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
-  border-width: 0px;
+.navbar .nav > li > a {
+  color: #ffffff;
+  text-shadow: 0 0 0 #ffffff;
+  padding: 10px 20px 0 0;
 }
 
 .content {
-  margin-top: 270px;
-  background-color: rgba(0, 20, 20, 0.6);
+  margin-top: 250px;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  .row-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
   .event {
     h1 {
+      padding-top: 10px;
       text-align: center;
+    }
+    h1:first-letter {
+      color: red;
+      font-size: 60px;
     }
     h3 {
       padding-left: 200px;
@@ -77,27 +107,41 @@ body {
       padding-left: 200px;
       text-align: left;
     }
+    .red {
+      display: inline-block;
+      _display: inline;
+    }
+    .white {
+      display: inline-block;
+      _display: inline;
+    }
     .save_button {
       text-align: center;
-    }
-    .time_table {
-      text-align: center;
-      font-weight: bold;
-      font-style: italic;
-      font-size: 20px;
-      img {
-        padding: 10px;
-        margin-bottom: 10px;
-        width: 40px;
+      a {
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
       }
     }
-    table.time_table {
-      .time_table {
-        text-align: center;
-        padding: 10px;
-      }
+    .select_message {
+      padding: 10px 10px 10px 10px;
+    }
+    table {
+      margin-left: auto;
+      margin-right: auto;
       .img-rounded {
         width: 200px;
+      }
+      td {
+        vertical-align: top;
+      }
+      td.select_button {
+        vertical-align: middle;
+      }
+      .time_table {
+        vertical-align: middle;
+        text-align: center;
+        padding-left: 7px;
       }
       .session {
         td.img {
@@ -105,7 +149,6 @@ body {
           padding: 10px;
         }
         td.speaker {
-          vertical-align: top;
           width: 220px;
           padding: 20px 20px 20px 10px;
           .title {
@@ -116,6 +159,10 @@ body {
           .speaker_name {
             font-weight: bold;
           }
+          .speaker_name:first-letter {
+            font-size: 20px;
+            color: red;
+          }
         }
         td.title {
           padding-left: 10px;
@@ -125,6 +172,9 @@ body {
           padding: 0px 0px 10px 10px;
         }
       }
+    }
+    tr.time_table {
+      border: 1px solid white;
     }
   }
 }

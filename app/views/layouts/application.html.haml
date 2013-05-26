@@ -22,14 +22,13 @@
     = image_tag "/assets/tis_matsuri.jpg", class: "matsuri_background"
     = image_tag "/assets/tis_matsuri_logo.gif", class: "matsuri_logo"
     .header
-      .navbar.navbar-fixed-top
-        .navbar-inner
-          .container.navigation
-            = render 'layouts/navigation'
+      .navbar.navbar-inner
+        .container.navigation.navbar-fixed-top
+          = render 'layouts/navigation'
 
-    .container
+    .container-fluid
       .content
-        .row
+        .row-fluid
           .span12
             = render 'layouts/messages'
             = yield

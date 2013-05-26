@@ -17,12 +17,10 @@
     = @event.description
 
   .save_button
-    = link_to '登録する', entry_event_path, class: "btn btn-large btn-success"
+    = link_to t("actions.get_in"), entry_event_path, class: "btn btn-large btn-warning"
+  %br
+  %br
   %br
 
-  .time_table
-    %img{src: "/assets/chochin.png"}
-    Time Table
-    %img{src: "/assets/chochin.png"}
   %table.time_table
-    %tr= render :partial => @schedules, :spacer_template => "schedules/separator"
+    %tr.time_table= render :partial => @schedules, :spacer_template => "schedules/separator"

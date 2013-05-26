@@ -1,12 +1,12 @@
-%td
-  = radio_button_tag(content.schedule_id, content.id, false) if @select_entry
+- if @select_entry
+  %td.select_button= radio_button_tag(content.schedule_id, content.id, false)
 %td
   %table.session
     %tr
       %td.img
         %img.img-rounded{src: "/assets/hatena.jpg"}
       %td.speaker
-        .label.label-info
+        .label.label-success
           .room_name
             = content.room_name
         = t("event.capacity")

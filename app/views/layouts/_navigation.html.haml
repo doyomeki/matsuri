@@ -1,5 +1,11 @@
 %ul.nav.pull-right
+  %li
+    %i{:class => "icon-home"}
+  %li
+    = link_to "TOP", root_path
   - if user_signed_in?
+    %li
+      %i{:class => "icon-user"}
     %li
       = link_to 'Edit account', edit_user_registration_path
     - if current_user.admin?
@@ -7,10 +13,12 @@
         = link_to 'Admin', rails_admin_path
   - else
     %li
+      %i{:class => "icon-plus-sign"}
+    %li
       = link_to 'Sign up', new_user_registration_path
   - if user_signed_in?
-    %li
+    %li.sign
       = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
   - else
-    %li
+    %li.sign
       = link_to 'Sign in', new_user_session_path
