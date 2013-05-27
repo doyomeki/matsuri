@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   has_many :schedules
 
   def self.top_data
-    events = self.where(flag: true)
+    events = self.where(upcoming: true)
     events.count == 1 ? events : events.first
   end
 
