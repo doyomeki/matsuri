@@ -1,26 +1,34 @@
-.event
-  %h1= @event.title
-  %h3
-    = t("event.open") + " : "
-    = l @event.start_datetime, format: :event_day
-    = "(" + @wdays[@event.start_datetime.wday] + ") "
-    = l @event.start_datetime, format: :event_time
-    = "〜"
-    = l @event.end_datetime, format: :event_time
-  %h3
-    = @event.place
-  %p
-    = t("event.capacity") + " : "
-    = @event.capacity
-    = t("event.person")
-  %p
-    = @event.description
+- unless session[:keyword]
+  = flash[:error]
+  %h1 合言葉認証
 
-  .save_button
-    = link_to t("actions.get_in"), entry_event_path, class: "btn btn-large btn-warning"
-  %br
-  %br
-  %br
+  = form_tag :controller => "events", :action => "keyword_authentication", :id => @id do
+    = text_field :event, :keyword
+    = submit_tag "認証"
+- else
+  .event
+    %h1= @event.title
+    %h3
+      = t("event.open") + " : "
+      = l @event.start_datetime, format: :event_day
+      = "(" + @wdays[@event.start_datetime.wday] + ") "
+      = l @event.start_datetime, format: :event_time
+      = "〜"
+      = l @event.end_datetime, format: :event_time
+    %h3
+      = @event.place
+    %p
+      = t("event.capacity") + " : "
+      = @event.capacity
+      = t("event.person")
+    %p
+      = @event.description
 
-  %table.time_table
-    %tr.time_table= render :partial => @schedules, :spacer_template => "schedules/separator"
+    .save_button
+      = link_to t("actions.get_in"), entry_event_path, class: "btn btn-large btn-warning"
+    %br
+    %br
+    %br
+
+    %table.time_table
+      %tr.time_table= render :partial => @schedules, :spacer_template => "schedules/separator"
