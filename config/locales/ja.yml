@@ -37,6 +37,8 @@ ja:
     session: "セッション"
   messages:
     select_content: "参加予定のセッションを選択してください。"
+    error_select_content: "セッションを選択していない時間帯があります。"
+    success_select_content: "参加セッションを登録しました。"
     have_to_login: "※参加セッションを選択するには"
     have_to_login2: "してください。"
   actions:
