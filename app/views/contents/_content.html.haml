@@ -20,6 +20,11 @@
       %td.description{colspan: 2}= content.description
     - if @select_entry
       %tr.attendee
-        %td
+        %td{:colspan => 2}
+          = content.attendee.count.to_s + t("event.person")
+          %br
           - content.attendee.each do |user|
-            = user.name
+            - if user.name == current_user.name
+              .current_user= user.name
+            - else
+              = user.name
