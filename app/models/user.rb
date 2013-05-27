@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   ROLES = %w[admin member]
-
+  validates_uniqueness_of :name
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:name]

@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @id = params[:id]
+    @event = Event.all
     respond_to do |format|
       format.html # index.html.haml
       format.json { render json: @event }
@@ -14,16 +14,29 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
-    @schedules = @event.time_schedules
-    @select_entry = false
-    @wdays = ["日", "月", "火", "水", "木", "金", "土"]
-
+    @id = params[:id]
+    if session[:keyword]
+      @event = Event.find(@id)
+      @schedules = @event.time_schedules
+      @select_entry = false
+      @wdays = ["日", "月", "火", "水", "木", "金", "土"]
+    end
     respond_to do |format|
       format.html # show.html.haml
       format.json { render json: @event }
     end
   end
+
+  def keyword_authentication
+    @event = Event.find(params[:id])
+    if @event.keyword == params[:event][:keyword]
+      session[:keyword] = @event.keyword
+      redirect_to :action => "show", :id => @event.id
+    else
+      redirect_to :action => "show", :id => @event.id, :flash => {:error => "合言葉が違います。"}
+    end
+  end
+
 
   def entry
     @event = Event.find(params[:id])
@@ -89,15 +102,6 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to entry_event_path, notice: e.message }
       format.json { head :no_content }
-    end
-  end
-
-  def keyword_authentication
-    @event = Event.find(params[:id])
-    if @event.keyword == params[:event][:keyword]
-      redirect_to :controller => "events", :action => "show", :id => @event.id
-    else
-      redirect_to :action => "index", :id => @event.id, :flash => {:error => "合言葉が違います。"}
     end
   end
 
