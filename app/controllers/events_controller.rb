@@ -44,7 +44,7 @@ class EventsController < ApplicationController
       if entry_event.blank?
         event_participation = EventParticipation.new(event_id: params[:id], user_id: current_user.id)
         event_participation.save!
-        event_participation.reload!
+        event_participation.reload
       else
         entry_event.first.cancelled = nil
         entry_event.first.save!
@@ -59,14 +59,18 @@ class EventsController < ApplicationController
           contents = Content.where(schedule_id: schedule.id)
           contents.each do |content|
             entry_content = user_entry_content?(event_participation_id, content.id)
-            if entry_content.blank?
-              if content.id = params[schedule.id.to_s]
+            # 選択されたコンテンツ
+            if content.id == params[schedule.id.to_s].to_i
+              if entry_content.blank?
                 content_participation = ContentParticipation.new(event_participation_id: event_participation_id, content_id: content.id)
                 content_participation.save!
               end
+            # 選択されなかったコンテンツ
             else
-              entry_content.each do |content|
-                content.destroy
+              unless entry_content.blank?
+                entry_content.each do |content|
+                  content.destroy
+                end
               end
             end
           end

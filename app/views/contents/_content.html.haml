@@ -18,3 +18,8 @@
       %td.title{colspan: 2}= content.title
     %tr
       %td.description{colspan: 2}= content.description
+    - if @select_entry
+      %tr.attendee
+        %td
+          - content.attendee.each do |user|
+            = user.name

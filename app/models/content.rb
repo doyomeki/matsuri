@@ -18,4 +18,13 @@ class Content < ActiveRecord::Base
   def speaker_description
     Speaker.where(id: self.speaker_id).first.description
   end
+
+  def attendee
+    @users = []
+    content_participations = ContentParticipation.where(content_id: self.id)
+    content_participations.each do |participation|
+      @users << User.find(EventParticipation.find(participation.event_participation_id).user_id)
+    end
+    @users
+  end
 end
