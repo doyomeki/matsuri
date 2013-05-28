@@ -25,6 +25,10 @@
           %br
           - content.attendee.each do |user|
             - if user.name == current_user.name
-              .current_user= user.name
+              .current_user
+                = user.name
+                - event_participation_id = EventParticipation.find_by_event_id_and_user_id(params[:id], user.id).id
+                - content_participation = ContentParticipation.find_by_content_id_and_event_participation_id(content.id, event_participation_id)
+                = link_to "×", content_participation, method: :delete
             - else
               = user.name
