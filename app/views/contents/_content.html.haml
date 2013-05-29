@@ -1,36 +1,37 @@
 - if @select_entry
   %td.select_button= radio_button_tag(content.schedule_id, content.id, false)
-%td
-  %table.session
-    %tr
-      %td.img
-        %img.img-rounded{src: "/assets/hatena.jpg"}
-      %td.speaker
-        .label.label-success
-          .room_name
-            = content.room_name
-        = t("event.capacity")
-        = content.room_capacity
-        = t("event.person")
-        .speaker_introduction
-          = render partial: "speakers/speaker", locals: {content: content}
-    %tr
-      %td.title{colspan: 2}= content.title
-    %tr
-      %td.description{colspan: 2}= content.description
-    - if @select_entry
-      %tr.attendee
-        %td{:colspan => 2}
-          = content.attendee.count.to_s + t("event.person")
-          %br
-          %ul.users
-            - content.attendee.each do |user|
-              - if user.name == current_user.name
-                %li.current_user
-                  = user.name
-                  - event_participation_id = EventParticipation.find_by_event_id_and_user_id(params[:id], user.id).id
-                  - content_participation = ContentParticipation.find_by_content_id_and_event_participation_id(content.id, event_participation_id)
-                  = link_to "×", content_participation, method: :delete
-              - else
-                %li
-                  = user.name
+%td.sessions
+  %label{:for => "#{content.schedule_id}_#{content.id}"}
+    %table.session
+      %tr
+        %td.img
+          %img.img-rounded{src: "/assets/hatena.jpg"}
+        %td.speaker
+          .label.label-success
+            .room_name
+              = content.room_name
+          = t("event.capacity")
+          = content.room_capacity
+          = t("event.person")
+          .speaker_introduction
+            = render partial: "speakers/speaker", locals: {content: content}
+      %tr
+        %td.title{colspan: 2}= content.title
+      %tr
+        %td.description{colspan: 2}= content.description
+      - if @select_entry
+        %tr.attendee
+          %td{:colspan => 2}
+            = content.attendee.count.to_s + t("event.person")
+            %br
+            %ul.users
+              - content.attendee.each do |user|
+                - if user.name == current_user.name
+                  %li.current_user
+                    = user.name
+                    - event_participation_id = EventParticipation.find_by_event_id_and_user_id(params[:id], user.id).id
+                    - content_participation = ContentParticipation.find_by_content_id_and_event_participation_id(content.id, event_participation_id)
+                    = link_to "×", content_participation, method: :delete
+                - else
+                  %li
+                    = user.name
