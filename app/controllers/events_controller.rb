@@ -15,8 +15,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @id = params[:id]
+    @event = Event.find(@id)
     if session[:keyword]
-      @event = Event.find(@id)
       @schedules = @event.time_schedules
       @select_entry = false
       @wdays = ["日", "月", "火", "水", "木", "金", "土"]

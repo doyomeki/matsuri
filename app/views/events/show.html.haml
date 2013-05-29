@@ -1,10 +1,15 @@
 - unless session[:keyword]
   = flash[:error]
-  %h1 合言葉認証
 
-  = form_tag :controller => "events", :action => "keyword_authentication", :id => @id do
-    = text_field :event, :keyword
-    = submit_tag "認証"
+  .event
+    %h1= @event.title
+    %h2 あいことば
+
+  .keyword
+    = form_tag :controller => "events", :action => "keyword_authentication", :id => @id do
+      = text_field :event, :keyword, :class => "input-medium search-query"
+      = submit_tag "どよめく", :class => "btn btn-large btn-warning"
+
 - else
   .event
     %h1= @event.title
