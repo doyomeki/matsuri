@@ -1,8 +1,8 @@
 %td.time_table
-    = l schedule.start_time
-    %br
-    = "〜"
-    %br
-    = l schedule.end_time
+  = l schedule.start_time
+  %br
+  = "〜"
+  %br
+  = l schedule.end_time
 - @contents = schedule.content_menu
 = render partial: @contents, spacer_template: "contents/separator"
