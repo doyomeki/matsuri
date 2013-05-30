@@ -38,23 +38,52 @@
 
 @successBackground: rgba(255, 255, 255, 0.4);
 
-input[type="text"] {
-  height: 40px;
-}
-
-div {
-  .keyword {
+.sign-in-up {
+  h2 {
+    padding-top: 10px;
+    padding-bottom: 30px;
     text-align: center;
-    padding-top: 20px;
+  }
+  h2:first-letter {
+    color: red;
+    font-size: 60px;
   }
 }
-button.btn, input[type="submit"].btn {
-  margin-left: 20px
+
+.simple_form {
+  .sign-in-up-form {
+    margin: 0 auto 0 auto;
+    width: 450px;
+    input[type="text"],input[type="password"], .control-label, .sign-in-up-submit, label.checkbox, .help-block {
+    margin-left: 30px;
+    input[type="text"],input[type="password"], .control-label {
+      margin-top: 20px;
+    }
+    }
+    .sign-in-up-submit  {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      margin-right: 10px;
+    }
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid white;
+  }
 }
 
-.btn btn-large btn-warning {
-  padding-left: 20px;
+.keyword {
+  text-align: center;
+  padding-top: 20px;
+  input[type="text"] {
+    height: 40px;
+  }
+  button.btn, input[type="submit"].btn {
+    margin-left: 20px
+  }
 }
+
 
 body {
   color: #ffffff;

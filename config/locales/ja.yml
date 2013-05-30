@@ -35,6 +35,8 @@ ja:
   time_table:
     time: "時間"
     session: "セッション"
+  user:
+    delete: "アカウントの削除"
   messages:
     select_content: "参加予定のセッションを選択してください。"
     error_select_content: "セッションを選択していない時間帯があります。"

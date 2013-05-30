@@ -1,0 +1,22 @@
+ja:
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      text: 'required'
+      mark: '*'
+      message: '印のついている項目は入力が必須です。'
+    error_notification:
+      default_message: "エラーがあります。確認してください。"
+    labels:
+      user:
+        name: 'ニックネーム'
+        password: 'パスワード'
+        password_confirmation: 'パスワード再入力'
+        remember_me: '保存'
+        current_password: '現在のパスワード'
+    hints:
+      user:
+        edit:
+          password: '変更しない場合は空白のままにしてください。'
+          current_password: '変更を反映するには現在のパスワードの入力が必要です。'
