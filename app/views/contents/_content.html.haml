@@ -1,7 +1,8 @@
 - if @select_entry
   %td.select_button= radio_button_tag(content.schedule_id, content.id, false)
-%td.sessions
-  %label{:for => "#{content.schedule_id}_#{content.id}"}
+  - @for = ""
+%td{:class => ("sessions" if @select_entry)}
+  %label{:for => ("#{content.schedule_id}_#{content.id}" if @select_entry)}
     %table.session
       %tr
         %td.img
@@ -21,7 +22,7 @@
         %td.description{colspan: 2}= content.description
       - if @select_entry
         %tr.attendee
-          %td{:colspan => 2}
+          %td.count{:colspan => 2}
             = content.attendee.count.to_s + t("event.person")
             %br
             %ul.users
