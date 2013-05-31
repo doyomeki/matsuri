@@ -33,7 +33,10 @@ class EventsController < ApplicationController
       session[:keyword] = @event.keyword
       redirect_to :action => "show", :id => @event.id
     else
-      redirect_to :action => "show", :id => @event.id, :flash => {:error => "合言葉が違います。"}
+      session[:keyword] = nil
+      flash[:error] = "あいことばが違います。"
+      flash.keep(:error)
+      redirect_to :action => "show", :id => @event.id
     end
   end
 

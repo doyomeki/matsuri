@@ -1,4 +1,5 @@
 ja:
+  confirm: 実行してよろしいですか？
   date:
     order:
       - :year
@@ -43,6 +44,37 @@ ja:
     success_select_content: "参加セッションを登録しました。"
     have_to_login: "※参加セッションを選択するには"
     have_to_login2: "してください。"
+    ccepted: を受諾してください。
+    blank: を入力してください。
+    confirmation: と確認の入力が一致しません。
+    empty: を入力してください。
+    equal_to: は%{count}にしてください。
+    even: は偶数にしてください。
+    exclusion: は予約されています。
+    greater_than: は%{count}より大きい値にしてください。
+    greater_than_or_equal_to: は%{count}以上の値にしてください。
+    inclusion: は一覧にありません。
+    invalid: は不正な値です。
+    less_than: は%{count}より小さい値にしてください。
+    less_than_or_equal_to: は%{count}以下の値にしてください。
+    not_a_number: は数値で入力してください。
+    not_an_integer: は整数で入力してください。
+    odd: は奇数にしてください。
   actions:
     get_in: "参加する!!"
     commit: "登録する"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: ニックネームを入力してください。
+              taken: そのニックネームは既に使われています。
+            password:
+              blank: パスワードが入力されていません
+              confirmation: パスワードがパスワード再入力と一致しません。
+              too_short: パスワードが短すぎます。
+            current_password:
+              blank: 現在のパスワードを入力してください。
+              invalid: パスワードが間違っています。

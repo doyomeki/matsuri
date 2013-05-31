@@ -1,5 +1,4 @@
 - unless session[:keyword]
-  = flash[:error]
 
   .event
     %h1= @event.title
@@ -7,7 +6,7 @@
 
   .keyword
     = form_tag :controller => "events", :action => "keyword_authentication", :id => @id do
-      = text_field :event, :keyword, :class => "input-medium search-query"
+      = password_field :event, :keyword, :class => "input-medium search-query"
       = submit_tag "どよめく", :class => "btn btn-large btn-warning"
 
 - else
