@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527012518) do
+ActiveRecord::Schema.define(:version => 20130531165948) do
 
   create_table "content_participations", :force => true do |t|
     t.string   "content_id"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(:version => 20130527012518) do
     t.string   "place"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.boolean  "upcoming"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "upcoming",       :default => false
     t.string   "keyword"
   end
 
