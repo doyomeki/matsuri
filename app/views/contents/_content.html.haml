@@ -6,7 +6,11 @@
     %table.session
       %tr
         %td.img
-          %img.img-rounded{src: "/assets/hatena.jpg"}
+          - @speaker = Speaker.find(content.speaker_id)
+          - if @speaker.photo
+            %img.img-rounded{src: @speaker.photo.url}
+          - else
+            %img.img-rounded{src: "/assets/hatena.jpg"}
         %td.speaker
           .label.label-success
             .room_name
