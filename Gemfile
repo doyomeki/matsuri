@@ -65,7 +65,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "mysql2"
+  gem "pg"
 end
 
 gem 'i18n-js'
