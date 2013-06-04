@@ -31,7 +31,7 @@
             %br
             %ul.users
               - content.attendee.each do |user|
-                - if user.name == current_user.name
+                - if current_user && (user.name == current_user.name)
                   %li.current_user
                     = user.name
                     - event_participation_id = EventParticipation.find_by_event_id_and_user_id(params[:id], user.id).id
