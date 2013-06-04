@@ -69,3 +69,5 @@ gem 'i18n-js'
 gem 'heroku'
 gem 'taps'
 gem 'redis'
+
+gem 'mysql2'
