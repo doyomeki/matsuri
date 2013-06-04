@@ -30,7 +30,7 @@
             = content.attendee.count.to_s + t("event.person")
             %br
             %ul.users
-              -# content.attendee.each do |user|
+              - content.attendee.each do |user|
                 - if user.name == current_user.name
                   %li.current_user
                     = user.name
