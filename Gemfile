@@ -68,3 +68,4 @@ gem 'i18n-js'
 # Heroku
 gem 'heroku'
 gem 'taps'
+gem 'redis'
