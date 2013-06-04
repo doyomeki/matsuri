@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20130604123223) do
 
   create_table "content_participations", :force => true do |t|
-    t.integer  "content_id",             :limit => 255
-    t.integer  "event_participation_id", :limit => 255
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "content_id"
+    t.integer  "event_participation_id"
   end
 
   create_table "contents", :force => true do |t|
