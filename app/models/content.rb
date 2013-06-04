@@ -1,7 +1,9 @@
 class Content < ActiveRecord::Base
   attr_accessible :capacity, :description, :room_name, :schedule_id, :speaker_id, :title, :room_id
 
+  #TODO: :scheduleを削除
   belongs_to :schedule, foreign_key: "schedule_id"
+  belongs_to :event, foreign_key: "event_id"
 
   def room_name
     Room.where(id: self.room_id).first.name
