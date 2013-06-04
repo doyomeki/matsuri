@@ -26,10 +26,6 @@ gem 'dragonfly'
 
 group :test do
   gem "email_spec", ">= 1.4.0"
-  gem "cucumber-rails", ">= 1.3.1", :require => false
-  gem "launchy", ">= 2.2.0" # capybara使うときに必要
-  gem "capybara", ">= 2.0.3"
-  # preloaderのzeusをguardで有効にする(zeusはgem install zeusしておく)
   gem "database_cleaner", ">= 1.0.0.RC1" # テスト終了時にDBを綺麗にしてくれる
 end
 
@@ -39,7 +35,6 @@ group :development do
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "html2haml", ">= 1.0.1"
   gem "guard-bundler", ">= 1.0.0"
-  gem "guard-cucumber", ">= 1.4.0"
   gem "guard-rails", ">= 0.4.0"
   gem "guard-rspec", ">= 2.5.2"
   gem "guard-zeus"

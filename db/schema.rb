@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604043853) do
+ActiveRecord::Schema.define(:version => 20130604123223) do
 
   create_table "content_participations", :force => true do |t|
-    t.string   "content_id"
-    t.string   "event_participation_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.integer  "content_id",             :limit => 255
+    t.integer  "event_participation_id", :limit => 255
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "contents", :force => true do |t|
